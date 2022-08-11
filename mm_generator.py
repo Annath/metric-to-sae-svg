@@ -24,7 +24,7 @@ def generate_mm_lines():
                         alignment-baseline="middle">{1} mm</text>
                 </g>"""
 
-    for i in range(24,1,-1):
+    for i in range(24,0,-1):
         y_val = round(mm_scaler * i, 2)
         output += fmt.format(y_val, i)
 

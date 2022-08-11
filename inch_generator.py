@@ -25,7 +25,7 @@ def generate_inch_lines():
                         alignment-baseline="middle">{1}/{2}"</text>
                 </g>"""
 
-    for i in range(15,1,-1):
+    for i in range(15,0,-1):
         fractional_inch = Fraction(i, 16)
         y_val = round(inch_scaler * i, 2)
         output += fmt.format(y_val, fractional_inch.numerator, fractional_inch.denominator)
