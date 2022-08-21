@@ -11,17 +11,17 @@ def generate_inch_lines():
                     <line
                         style="stroke: rgb(0,0,0); stroke-width: 2;"
                         vector-effect="non-scaling-stroke"
-                        x1="-100"
+                        x1="100"
                         y1="-{0:.01f}"
                         x2="0"
                         y2="-{0:.01f}" />
                     <text
-                        x="-110"
+                        x="110"
                         y="-{0:.01f}"
                         font-size="2em"
                         font-family="sans-serif"
                         font-weight="bold"
-                        text-anchor="end"
+                        text-anchor="start"
                         alignment-baseline="middle">{1}/{2}"</text>
                 </g>"""
 
