@@ -10,11 +10,11 @@ previews: png pdf
 
 pdf: svg
 	mkdir -p ${PREVIEWS_DIR}
-	inkscape ${SVG_PATH} -d 300 -A ${PREVIEWS_DIR}/${FILE_NAME}.pdf
+	inkscape -z ${SVG_PATH} -d 300 -A ${PREVIEWS_DIR}/${FILE_NAME}.pdf 2>/dev/null
 
 png: svg
 	mkdir -p ${PREVIEWS_DIR}
-	inkscape ${SVG_PATH} -w 927 -h 1200 -e ${PREVIEWS_DIR}/${FILE_NAME}.png
+	inkscape -z ${SVG_PATH} -w 927 -h 1200 -e ${PREVIEWS_DIR}/${FILE_NAME}.png 2>/dev/null
 
 svg:
 	mkdir -p ${OUTPUT_DIR}
