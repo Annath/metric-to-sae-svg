@@ -9,13 +9,13 @@
     <g transform="translate(463.5 10)">
         <text
             x="100"
-            y="60"
+            y="75"
             font-size="4em"
             font-family="sans-serif"
             text-anchor="start">SAE</text>
         <text
             x="-100"
-            y="60"
+            y="75"
             font-size="4em"
             font-family="sans-serif"
             text-anchor="end">Metric</text>
