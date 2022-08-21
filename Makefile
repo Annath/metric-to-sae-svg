@@ -1,24 +1,25 @@
 SHELL = /bin/sh
 FILE_NAME = metric-to-sae
 OUTPUT_DIR = output
-PREVIEWS_DIR = ${OUTPUT_DIR}/previews
-SVG_PATH = ${OUTPUT_DIR}/${FILE_NAME}.svg
 
-all: previews
+TEMPLATE = chart-template.svg
+SVG = ${OUTPUT_DIR}/${FILE_NAME}.svg
+PNG = ${OUTPUT_DIR}/${FILE_NAME}.png
+PDF = ${OUTPUT_DIR}/${FILE_NAME}.pdf
 
-previews: png pdf
+all: svg previews
+svg: ${SVG}
+previews: ${PDF} ${PNG}
 
-pdf: svg
-	mkdir -p ${PREVIEWS_DIR}
-	inkscape -z ${SVG_PATH} -d 300 -A ${PREVIEWS_DIR}/${FILE_NAME}.pdf 2>/dev/null
+${PDF}: ${SVG}
+	inkscape -z ${SVG} -d 300 -A ${PDF} 2>/dev/null
 
-png: svg
-	mkdir -p ${PREVIEWS_DIR}
-	inkscape -z ${SVG_PATH} -w 927 -h 1200 -e ${PREVIEWS_DIR}/${FILE_NAME}.png 2>/dev/null
+${PNG}: ${SVG}
+	inkscape -z ${SVG} -d 150 -e ${PNG} 2>/dev/null
 
-svg:
+${SVG}: ${TEMPLATE}
 	mkdir -p ${OUTPUT_DIR}
-	./generator.py ${SVG_PATH}
+	./generator.py ${SVG}
 
 clean:
 	rm -rf ${OUTPUT_DIR}
